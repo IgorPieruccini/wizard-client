@@ -12,7 +12,8 @@ interface SocketProviderProps {
     children: React.ReactNode
 }
 
-export const mainSocket = io("http://localhost:4000", { autoConnect: false });
+
+export const mainSocket = io(`${process.env.REACT_APP_LOCAL_URL}:4000`, { autoConnect: false });
 
 
 /**

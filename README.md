@@ -34,4 +34,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 In order to use the socket connection for this application make sure you have running
 the [wizard server](https://github.com/IgorPieruccini/wizard-server) on port 4000 and your current react app on port 3000.
 
-The easiest way to connect to the server socket, is by using the useConnectSocket hook.
+The easiest way to connect and use server socket, is by using the useSocket hook.
+
+## Environment variables
+during development you will need to add to your .env
+`
+    REACT_APP_LOCAL_URL=YOUR_IP_ADDRESS
+`
