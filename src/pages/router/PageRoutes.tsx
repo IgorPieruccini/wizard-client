@@ -6,7 +6,8 @@ import { RouteGuard } from "./RouteGaurd"
 
 export const PAGES = {
     login: "/",
-    lobby: "/lobby"
+    lobby: "/lobby",
+    game: "/game"
 }
 
 export const PageRouter = ()=> {
@@ -16,11 +17,19 @@ export const PageRouter = ()=> {
         <BrowserRouter>
             <Routes>
                 <Route path={PAGES.login} element={<LoginPage />} />
+                
                 <Route path={PAGES.lobby} element={
                     <RouteGuard fallbackUrl={PAGES.login}  hasPermission={()=> isConnected}>
                         <LobbyPage />
                     </RouteGuard>
                 } />
+
+                <Route path={PAGES.game} element={
+                    <RouteGuard fallbackUrl={PAGES.login}  hasPermission={()=> isConnected}>
+                        <div>Game Page</div>
+                    </RouteGuard>
+                } />
+
             </Routes>
         </BrowserRouter>
     )
