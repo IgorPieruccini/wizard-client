@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
-import io from 'socket.io-client';
-
-const URL = "http://localhost:4000";
-const socket = io(URL, { autoConnect: false });
+import { mainSocket } from "../socketContext";
+import { LobbyState, SocketEventTypes } from "../types";
 
 /**
  * useConnectSocket manages the initial socket connection status.
@@ -10,33 +8,32 @@ const socket = io(URL, { autoConnect: false });
  * @returns connect method to connect the client with the server
  * @returns setUsername in order to connect to the socket a user name needs to 
  * be provide through this method
-
  */
 export const useConnectSocket = ()=> {
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
-        socket.onAny((event, ...args) => {
-            console.log(event, args);
+        mainSocket.onAny((event, ...args) => {
+            console.log("event",event, args);
         });
 
-        socket.on('connect', () => {
+        mainSocket.on('connect', () => {
             setIsConnected(true);
         });
 
-        socket.on('disconnect', () => {
+        mainSocket.on('disconnect', () => {
             setIsConnected(false);
         });
         
         return () => {
-        socket.off('connect');
-        socket.off('disconnect');
-        socket.off('pong');
+            mainSocket.off('connect');
+            mainSocket.off('disconnect');
+            mainSocket.off('pong');
         };
   }, []);
 
-  const connect = ()=> socket.connect();
-  const setUsername = (username: string)=> socket.auth = { username };
+  const connect = ()=> mainSocket.connect();
+  const setUsername = (username: string)=> mainSocket.auth = { username };
 
     return {
         isConnected,
