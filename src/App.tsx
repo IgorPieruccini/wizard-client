@@ -1,9 +1,9 @@
 import './App.css';
-import { useSocket } from './hooks/socket/useSocket';
+import { useConnectSocket } from './hooks/socket/useSocket';
 
 function App() {
 
-  const { isConnected, connect } = useSocket();
+  const { isConnected, connect } = useConnectSocket();
 
   return (
     <div className="App">

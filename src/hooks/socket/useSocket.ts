@@ -4,7 +4,12 @@ import io from 'socket.io-client';
 const URL = "http://localhost:4000";
 const socket = io(URL, { autoConnect: false });
 
-export const useSocket = ()=> {
+/**
+ * useConnectSocket manages the initial socket connection status.
+ * @returns isConnected
+ * @returns connect method to connect the client with the server
+ */
+export const useConnectSocket = ()=> {
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
