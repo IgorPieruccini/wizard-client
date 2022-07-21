@@ -1,11 +1,14 @@
 import './App.css';
-import { PageRouter } from './pages/PageRoutes';
+import { SocketProvider } from './context/socket/socketContext';
+import { PageRouter } from './pages/router/PageRoutes';
 
 function App() {
   return (
     <div className="App">
       <p>Wizards</p>
-      <PageRouter />
+      <SocketProvider>
+        <PageRouter />
+      </SocketProvider>
     </div>
   );
 }
