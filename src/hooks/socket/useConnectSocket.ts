@@ -27,6 +27,7 @@ export const useConnectSocket = ()=> {
         socket.on('disconnect', () => {
             setIsConnected(false);
         });
+        
         return () => {
         socket.off('connect');
         socket.off('disconnect');
