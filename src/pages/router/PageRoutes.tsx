@@ -1,5 +1,6 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { useSocket } from "../../context/socket/hooks/useSocket"
+import { GamePage } from "../game/GamePage"
 import { LobbyPage } from "../lobby/LobbyPage"
 import { LoginPage } from "../login/LoginPage"
 import { RouteGuard } from "./RouteGaurd"
@@ -26,7 +27,7 @@ export const PageRouter = ()=> {
 
                 <Route path={PAGES.game} element={
                     <RouteGuard fallbackUrl={PAGES.login}  hasPermission={()=> isConnected}>
-                        <div>Game Page</div>
+                       <GamePage />
                     </RouteGuard>
                 } />
 

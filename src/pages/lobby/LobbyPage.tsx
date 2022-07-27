@@ -11,13 +11,11 @@ export const LobbyPage = ()=> {
 
     useEffect(()=> {
         mainSocket.on(SocketEventTypes.START_GAME, ()=> {
-            console.log("START GAME");
             navigate(PAGES.game)
         });
     }, []);
 
     if(!lobbyState) return <div>loading</div>
-
 
     return <div>
         {lobbyState.users.map((user)=> 

@@ -16,6 +16,9 @@ export interface SocketContextType {
     /** useSocketLobby */
     lobbyState?: LobbyState,
     userReady: (id: string)=> void
+
+    /** useSocketGame */
+    gameState?: GameState
 }
 
 /**
@@ -33,9 +36,40 @@ export enum SocketEventTypes {
     /** emit in any user action */
     USER_ACTION = "user action",
     /**  broadcasted on a lobby state update */
-    UPDATE_LOBBY_STATE = "Lobby state update"
+    UPDATE_LOBBY_STATE = "Lobby state update",
+    /**  broadcasted on a game state update */
+    UPDATE_GAME_STATE = "Game state update"
 }
 
 export interface LobbyState {
     users: SocketUser[];
+}
+
+export type CardColor = "red" | "green" | "yellow" | "blue"
+export interface Card {
+    id: string,
+    color: CardColor,
+    value: string
+}
+export interface Player {
+    id: string,
+    /** The cards the player has in his hands */
+    hand: Card[],
+    points: number
+}
+export interface GameState {
+    /** stack of cards */
+    deck: Card[]
+    /** the max number of rounds calculated by the number of player x number of cards */
+    maxRounds: number,
+    /** the number of the current round */
+    currentRound: number,
+    /** the id of the player who has to play in this round */
+    playersTurn: string,
+    /** the first card in the table to be used in case of tie (color base)*/
+    untieCard?: Card,
+    /** all the cards that has been discarded in this round */
+    cemeteryCards: Card[],
+    /** players in the room */
+    players: Player[]
 }
