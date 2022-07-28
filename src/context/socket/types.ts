@@ -53,6 +53,7 @@ export interface CardType {
 }
 export interface Player {
     id: string,
+    name: string,
     /** The cards the player has in his hands */
     hand: CardType[],
     points: number

@@ -4,21 +4,25 @@ export const defaultGameStateMock: GameState = {
   players: [
     {
       id: "JrEeKNlUwAKk4Qk0AAAB",
+      name: "Mr.Json",
       points: 0,
       hand: [{ id: "green5", color: "green", value: "5" }],
     },
     {
       id: "bv2WSrwzJNMjWZ4wAAAD",
+      name: "Ms.Java",
       points: 0,
       hand: [{ id: "yellow1", color: "yellow", value: "1" }],
     },
     {
       id: "2Yf0A8B6CA9ZkC7kAAAF",
+      name: "MC.Python",
       points: 0,
       hand: [{ id: "red10", color: "red", value: "10" }],
     },
     {
       id: "JjTv4a8DlnyCmu2zAAAH",
+      name: "Mr.C-sharp",
       points: 0,
       hand: [{ id: "green7", color: "green", value: "7" }],
     },

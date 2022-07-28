@@ -39,7 +39,7 @@ export const PlayersLobby = ()=> {
             {playersInTheRoom?.map((player)=> {
                 return <AvatarContainer key={player.id}>
                     <Avatar alt="avatar" src="./avatar-icon.png" />
-                    <AvatarName>{player.id}</AvatarName>
+                    <AvatarName>{player.name}</AvatarName>
                 </AvatarContainer>
             })}
         </PlayersLobbyContainer>
