@@ -1,17 +1,15 @@
-import { useSocket } from "../../context/socket/hooks/useSocket"
 import { PlayerHand } from "./components/PlayerHand"
+import { PlayersLobby } from "./components/PlayersLobby"
 
 export const GamePage = ()=> {
 
-    const { gameState} = useSocket()
 
     return (
         <div>
-            <p>Game</p>
-            {JSON.stringify(gameState)}
-            <div>
+            <p>Game Page</p>
+           <PlayersLobby /> 
+            <br/>
             <PlayerHand />
-            </div>
         </div>
     )     
 }
