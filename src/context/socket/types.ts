@@ -46,7 +46,7 @@ export interface LobbyState {
 }
 
 export type CardColor = "red" | "green" | "yellow" | "blue"
-export interface Card {
+export interface CardType {
     id: string,
     color: CardColor,
     value: string
@@ -54,12 +54,12 @@ export interface Card {
 export interface Player {
     id: string,
     /** The cards the player has in his hands */
-    hand: Card[],
+    hand: CardType[],
     points: number
 }
 export interface GameState {
     /** stack of cards */
-    deck: Card[]
+    deck: CardType[]
     /** the max number of rounds calculated by the number of player x number of cards */
     maxRounds: number,
     /** the number of the current round */
@@ -67,9 +67,9 @@ export interface GameState {
     /** the id of the player who has to play in this round */
     playersTurn: string,
     /** the first card in the table to be used in case of tie (color base)*/
-    untieCard?: Card,
+    untieCard?: CardType,
     /** all the cards that has been discarded in this round */
-    cemeteryCards: Card[],
+    cemeteryCards: CardType[],
     /** players in the room */
     players: Player[]
 }
