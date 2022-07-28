@@ -1,5 +1,6 @@
 import { CardType } from "../../../../context/socket/types"
 import styled  from "styled-components";
+import { cardColors } from "../../../../shared/colors";
 
 interface CardProps {
     card: CardType
@@ -24,9 +25,11 @@ const CardValue = styled.p`
     margin: 0px;
 `
 
+
 export const Card = ({ card }: CardProps)=> {
     const { color , value } = card;
-    return <CardContainer color={color} data-testid={`card-${card.id}`}>
+    
+    return <CardContainer color={cardColors[color]} data-testid={`card-${card.id}`}>
         <CardValue>{value}</CardValue>
     </CardContainer>
 }

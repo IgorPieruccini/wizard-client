@@ -4,6 +4,7 @@ import { defaultSocketContext } from "../../../../context/socket/help";
 import { SocketContext } from "../../../../context/socket/socketContext";
 import { SocketContextType } from "../../../../context/socket/types";
 import { defaultGameStateMock } from "../../../../mock";
+import { cardColors } from "../../../../shared/colors";
 import { PlayerHand } from "./PlayerHand";
 import { handMock } from "./playerHand.mock";
 
@@ -30,13 +31,13 @@ describe("<PlayerHand/>", ()=> {
         })
 
         expect(screen.getByText("6")).toBeInTheDocument();
-        expect(screen.getByTestId("card-yellow6")).toHaveStyle("background-color: yellow");
+        expect(screen.getByTestId("card-yellow6")).toHaveStyle(`background-color: ${cardColors.yellow}`);
 
         expect(screen.getByText("10")).toBeInTheDocument();
-        expect(screen.getByTestId("card-red10")).toHaveStyle("background-color: red");
+        expect(screen.getByTestId("card-red10")).toHaveStyle(`background-color: ${cardColors.red}`);
 
         expect(screen.getByText("2")).toBeInTheDocument();
-        expect(screen.getByTestId("card-blue2")).toHaveStyle("background-color: blue");
+        expect(screen.getByTestId("card-blue2")).toHaveStyle(`background-color: ${cardColors.blue}`);
     })
 
 })
