@@ -51,7 +51,6 @@ export const PlayerPredictions = ()=> {
 
     const predict = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=> {
         const wins = Number(e.currentTarget.value);
-        console.log({playerId: socket.id, wins})
         mainSocket.emit(SocketEventTypes.PREDICT_WIN, {playerId: socket.id, wins});
     }
 

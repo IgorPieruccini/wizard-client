@@ -19,7 +19,7 @@ describe("<PlayerHand/>", ()=> {
 
     it("Display all cards", ()=> {
 
-        const gameStateMock = defaultGameStateMock;
+        const gameStateMock = {...defaultGameStateMock};
         gameStateMock.players[0].hand = handMock;
 
         customRender(<PlayerHand/>, {
