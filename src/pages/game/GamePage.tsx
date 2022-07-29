@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { PlayerHand } from "./components/PlayerHand"
+import { PlayerPredictions } from "./components/PlayerPredictions"
 import { PlayersLobby } from "./components/PlayersLobby"
 import { UntieCard } from "./components/UntieCard"
 
@@ -18,9 +19,8 @@ export const GamePage = ()=> {
     return (
         <GamePageContainer>
             <PlayersLobby /> 
-            <br/>
             <UntieCard />
-            <br/>
+            <PlayerPredictions/>
             <PlayerHand />
         </GamePageContainer>
     )     

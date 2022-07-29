@@ -38,7 +38,9 @@ export enum SocketEventTypes {
     /**  broadcasted on a lobby state update */
     UPDATE_LOBBY_STATE = "Lobby state update",
     /**  broadcasted on a game state update */
-    UPDATE_GAME_STATE = "Game state update"
+    UPDATE_GAME_STATE = "Game state update",
+    /** emit when user predicts the amount of time they gonna win in the current round */
+    PREDICT_WIN = "predict win"
 }
 
 export interface LobbyState {
@@ -58,6 +60,16 @@ export interface Player {
     hand: CardType[],
     points: number
 }
+
+export interface PredictedPlayerWins {
+    playerId: string,
+    wins: number
+}
+
+export enum MatchPhase {
+    PREDICT = "predict",
+    PLAY_CARDS = "play cards"
+}
 export interface GameState {
     /** stack of cards */
     deck: CardType[]
@@ -72,5 +84,9 @@ export interface GameState {
     /** all the cards that has been discarded in this round */
     cemeteryCards: CardType[],
     /** players in the room */
-    players: Player[]
+    players: Player[],
+    /** the amount of wins each player bets it's going to win with their set of cards */
+    predictedWins: PredictedPlayerWins[],
+    /** the current phase of the match */
+    matchPhase: MatchPhase
 }

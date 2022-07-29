@@ -1,4 +1,4 @@
-import { GameState } from "../context/socket/types";
+import { GameState, MatchPhase } from "../context/socket/types";
 
 export const defaultGameStateMock: GameState = {
   players: [
@@ -85,4 +85,6 @@ export const defaultGameStateMock: GameState = {
   playersTurn: "bv2WSrwzJNMjWZ4wAAAD",
   cemeteryCards: [],
   untieCard: { id: "yellow11", color: "yellow", value: "11" },
+  matchPhase: MatchPhase.PREDICT,
+  predictedWins: [],
 };
