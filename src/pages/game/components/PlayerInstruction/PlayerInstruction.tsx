@@ -2,18 +2,10 @@ import { useMemo } from "react";
 import styled from "styled-components";
 import { useSocket } from "../../../../context/socket/hooks/useSocket";
 import { MatchPhase } from "../../../../context/socket/types";
+import { StyleBaseModal } from "../../../../styles";
 
 
-const InstructionContainer = styled.div`
-    padding: 20px;
-    border-radius: 20px;
-    margin: 20px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
-    backgroundColor: #4A525A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
+const InstructionContainer = styled(StyleBaseModal)``;
 
 const InstructionText = styled.p`
     font-size: 3em;

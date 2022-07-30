@@ -1,12 +1,11 @@
 import { useMemo } from "react";
 import styled from "styled-components"
 import { useSocket } from "../../../../context/socket/hooks/useSocket";
+import { StyleFlexCenter } from "../../../../styles";
 import { Card } from "../Card"
 
 const HandContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${StyleFlexCenter}
     height: 130px;
     width: auto;
 `;

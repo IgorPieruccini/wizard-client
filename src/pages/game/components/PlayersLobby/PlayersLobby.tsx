@@ -1,18 +1,15 @@
 import { useMemo } from "react";
 import styled from "styled-components"
 import { useSocket } from "../../../../context/socket/hooks/useSocket";
+import { StyleFlexCenter } from "../../../../styles";
 
 const PlayersLobbyContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${StyleFlexCenter}
     height: 100px;
 `;
 
 const AvatarContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${StyleFlexCenter}
     flex-direction: column;
     margin: 10px;
 `;

@@ -4,18 +4,9 @@ import { useSocket } from "../../../../context/socket/hooks/useSocket";
 import { mainSocket } from "../../../../context/socket/socketContext";
 import { MatchPhase, SocketEventTypes } from "../../../../context/socket/types";
 import { cardColors } from "../../../../shared/colors";
+import { StyleBaseModal } from "../../../../styles";
 
-const PlayerPredictionsContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 20px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
-    backgroundColor: #4A525A;
-`;
+const PlayerPredictionsContainer = styled(StyleBaseModal)``;
 
 const PredictButton = styled.button`
     border: none;
