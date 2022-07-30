@@ -1,16 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import { defaultSocketContext } from "../../../../context/socket/help";
-import { SocketContext } from "../../../../context/socket/socketContext";
-import { MatchPhase, SocketContextType } from "../../../../context/socket/types";
+import { screen } from "@testing-library/react";
+import { MatchPhase } from "../../../../context/socket/types";
 import { defaultGameStateMock } from "../../../../mock";
+import { customRender } from "../../../../test";
 import { PlayerInstruction } from "./PlayerInstruction";
 
-
-const customRender = (ui: JSX.Element, value: Partial<SocketContextType>) => {
-  return render(
-    <SocketContext.Provider value={{...defaultSocketContext, ...value}}>{ui}</SocketContext.Provider>,
-  )
-}
 describe("<PlayerInstruction/>", ()=> {
 
     it("Match Prediction + Player turn", ()=> {

@@ -1,18 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import React from "react";
-import { defaultSocketContext } from "../../../../context/socket/help";
-import { SocketContext } from "../../../../context/socket/socketContext";
-import { SocketContextType } from "../../../../context/socket/types";
+import { screen } from "@testing-library/react";
 import { defaultGameStateMock } from "../../../../mock";
 import { cardColors } from "../../../../shared/colors";
+import { customRender } from "../../../../test";
 import { PlayerHand } from "./PlayerHand";
 import { handMock } from "./playerHand.mock";
-
-const customRender = (ui: JSX.Element, value: Partial<SocketContextType>) => {
-  return render(
-    <SocketContext.Provider value={{...defaultSocketContext, ...value}}>{ui}</SocketContext.Provider>,
-  )
-}
 
 
 describe("<PlayerHand/>", ()=> {

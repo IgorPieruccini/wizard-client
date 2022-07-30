@@ -1,9 +1,8 @@
-import { render, screen, waitFor } from "@testing-library/react"
+import { screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event";
-import { defaultSocketContext } from "../../../../context/socket/help"
-import { SocketContext } from "../../../../context/socket/socketContext";
-import { GameState, MatchPhase, SocketContextType, SocketEventTypes } from "../../../../context/socket/types"
+import { GameState, MatchPhase, SocketEventTypes } from "../../../../context/socket/types"
 import { defaultGameStateMock } from "../../../../mock";
+import { customRender } from "../../../../test";
 import { handMock } from "../PlayerHand/playerHand.mock";
 import { PlayerPredictions } from "./PlayerPredictions"
 
@@ -16,11 +15,6 @@ jest.mock("../../../../context/socket/socketContext", ()=> ({
     mainSocket
 }));
 
-const customRender = (ui: JSX.Element, value: Partial<SocketContextType>) => {
-  return render(
-    <SocketContext.Provider value={{...defaultSocketContext, ...value}}>{ui}</SocketContext.Provider>,
-  )
-}
 
 describe("<PlayerPredictions />", ()=> {
 
