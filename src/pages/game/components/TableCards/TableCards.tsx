@@ -9,8 +9,7 @@ export const TableCardsContainer = styled.div`
 `;
 
 export const AvatarContainer = styled.div`
-    position: absolute;
-    bottom: -10px
+
 `
 
 export const TableCards = ()=> {
@@ -21,12 +20,12 @@ export const TableCards = ()=> {
             gameState?.tableCards.map((tableCard)=> {
                 const player = gameState.players.find(player => player.id === tableCard.playerId);
                 return <div key={tableCard.id}>
+                    <Card card={tableCard} />
                     {player && 
                     (<AvatarContainer>
                         <Avatar player={player} />
                     </AvatarContainer>)
                     }
-                    <Card card={tableCard} />
                 </div>
             })
         }

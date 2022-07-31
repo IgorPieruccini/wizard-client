@@ -3,23 +3,13 @@ import styled from "styled-components"
 import { useSocket } from "../../../../context/socket/hooks/useSocket";
 import { mainSocket } from "../../../../context/socket/socketContext";
 import { MatchPhase, SocketEventTypes } from "../../../../context/socket/types";
-import { cardColors } from "../../../../shared/colors";
-import { StyleBaseModal } from "../../../../styles";
+import { StyleBaseButton, StyleBaseModal } from "../../../../styles";
 
 const PlayerPredictionsContainer = styled(StyleBaseModal)``;
 
-const PredictButton = styled.button`
-    border: none;
+const PredictButton = styled(StyleBaseButton)`
     height: 64px;
     width: 64px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
-    margin: 15px;
-    &:hover {
-    background-color: ${cardColors.green};
-    cursor: pointer;
-  }
 `
 
 const ButtonText = styled.p`
