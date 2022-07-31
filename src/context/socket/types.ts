@@ -40,7 +40,9 @@ export enum SocketEventTypes {
     /**  broadcasted on a game state update */
     UPDATE_GAME_STATE = "Game state update",
     /** emit when user predicts the amount of time they gonna win in the current round */
-    PREDICT_WIN = "predict win"
+    PREDICT_WIN = "predict win",
+    /** emit when user picks a card */
+    PICK_CARD = "pick card"
 }
 
 export interface LobbyState {
@@ -70,6 +72,9 @@ export enum MatchPhase {
     PREDICT = "predict",
     PLAY_CARDS = "play cards"
 }
+
+export type TableCard = CardType & {playerId: string};
+
 export interface GameState {
     /** stack of cards */
     deck: CardType[]
@@ -89,4 +94,6 @@ export interface GameState {
     predictedWins: PredictedPlayerWins[],
     /** the current phase of the match */
     matchPhase: MatchPhase
+    /** cards that were played this round*/
+    tableCards: TableCard[]
 }

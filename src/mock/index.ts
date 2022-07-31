@@ -87,4 +87,5 @@ export const defaultGameStateMock: GameState = {
   untieCard: { id: "yellow11", color: "yellow", value: "11" },
   matchPhase: MatchPhase.PREDICT,
   predictedWins: [],
+  tableCards: []
 };

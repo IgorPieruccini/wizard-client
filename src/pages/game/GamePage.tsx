@@ -3,6 +3,7 @@ import { PlayerHand } from "./components/PlayerHand"
 import { PlayerInstruction } from "./components/PlayerInstruction"
 import { PlayerPredictions } from "./components/PlayerPredictions"
 import { PlayersLobby } from "./components/PlayersLobby"
+import { TableCards } from "./components/TableCards"
 import { UntieCard } from "./components/UntieCard"
 
 
@@ -21,6 +22,7 @@ export const GamePage = ()=> {
         <GamePageContainer>
             <PlayersLobby /> 
             <UntieCard />
+            <TableCards />
             <PlayerInstruction />
             <PlayerPredictions/>
             <PlayerHand />
