@@ -7,11 +7,13 @@ export const StyleFlexCenter = `
     align-items: center;
 `
 
+export const defaultBoxShadow = `box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);`;
+
 export const StyleBaseButton = styled.button`
+    ${defaultBoxShadow}
     border: none;
     border-radius: 20px;
     background-color: white;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
     margin: 15px;
     &:hover {
     background-color: ${cardColors.green};
@@ -21,9 +23,9 @@ export const StyleBaseButton = styled.button`
 
 export const StyleBaseModal = styled.div`
     ${StyleFlexCenter}
+    ${defaultBoxShadow}
     height: 120px;
     padding: 20px;
     border-radius: 20px;
     margin: 20px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
 `;

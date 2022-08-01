@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { StyleFlexCenter } from "../../styles"
 import { PlayerHand } from "./components/PlayerHand"
 import { PlayerInstruction } from "./components/PlayerInstruction"
 import { PlayerPredictions } from "./components/PlayerPredictions"
@@ -11,8 +12,20 @@ const GamePageContainer = styled.div`
     height: 100%;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
 `
+
+const LeftColumn = styled.div`
+    ${StyleFlexCenter}
+    min-width: 280px;
+    align-items: flex-start;
+    background-color: #14405A;
+`;
+
+const RightColumn = styled.div`
+    ${StyleFlexCenter}
+    flex-direction: column;
+    padding: 20px;
+`;
 
 
 export const GamePage = ()=> {
@@ -20,12 +33,18 @@ export const GamePage = ()=> {
 
     return (
         <GamePageContainer>
-            <PlayersLobby /> 
-            <UntieCard />
-            <TableCards />
-            <PlayerInstruction />
-            <PlayerPredictions/>
-            <PlayerHand />
+            <LeftColumn>
+                <PlayersLobby /> 
+            </LeftColumn>
+            
+            <RightColumn>
+                <UntieCard />
+                <TableCards />
+                <PlayerInstruction />
+                <PlayerPredictions/>
+                <PlayerHand />
+            </RightColumn>
+
         </GamePageContainer>
     )     
 }

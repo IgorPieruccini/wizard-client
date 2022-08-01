@@ -5,7 +5,6 @@ import { PageRouter } from './pages/router/PageRoutes';
 function App() {
   return (
     <div className="App">
-      <p>Wizards</p>
       <SocketProvider>
         <PageRouter />
       </SocketProvider>

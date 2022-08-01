@@ -8,9 +8,7 @@ export const TableCardsContainer = styled.div`
     ${StyleFlexCenter}
 `;
 
-export const AvatarContainer = styled.div`
-
-`
+export const AvatarContainer = styled.div``
 
 export const TableCards = ()=> {
     const { gameState } = useSocket();

@@ -30,8 +30,7 @@ export const PlayerPredictions = ()=> {
 
     const isCurrentPlayerTurn = gameState?.playersTurn === socket.id;
 
-    const predict = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=> {
-        const wins = Number(e.currentTarget.value);
+    const predict = (wins: number)=> {
         mainSocket.emit(SocketEventTypes.PREDICT_WIN, {playerId: socket.id, wins});
     }
 
@@ -41,8 +40,8 @@ export const PlayerPredictions = ()=> {
         <div>
             <h3>Pick how many times you think you can win!</h3>
             <PlayerPredictionsContainer>
-                <PredictButton onClick={predict}><ButtonText>0</ButtonText></PredictButton>
-                { hand.map((_, i)=> <PredictButton key={i + 1} onClick={predict}><ButtonText>{i + 1}</ButtonText></PredictButton>) }
+                <PredictButton onClick={()=> predict(0)}><ButtonText>0</ButtonText></PredictButton>
+                { hand.map((_, i)=> <PredictButton key={i + 1} onClick={()=> predict(i+1)}><ButtonText>{i + 1}</ButtonText></PredictButton>) }
             </PlayerPredictionsContainer>
         </div>
         
