@@ -1,1 +1,1 @@
-export * from "./PlayerPredictions";
+export * from './PlayerPredictions';

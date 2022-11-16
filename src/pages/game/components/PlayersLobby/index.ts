@@ -1,1 +1,1 @@
-export * from "./PlayersLobby"
+export * from './PlayersLobby';
