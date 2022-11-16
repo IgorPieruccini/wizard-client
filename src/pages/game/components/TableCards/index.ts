@@ -1,1 +1,1 @@
-export * from "./TableCards"
+export * from './TableCards';

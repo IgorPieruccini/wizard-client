@@ -1,1 +1,1 @@
-export * from "./PlayerInstruction"
+export * from './PlayerInstruction';
